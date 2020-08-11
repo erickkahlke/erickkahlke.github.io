@@ -1,0 +1,199 @@
+$back-dark-color: #171123;
+$back-light-color: rgb(131, 175, 179);
+$color1: #372248;
+$color2: #414770;
+$color3: #5B85AA;
+// $alert-color: #F46036;
+$alert-color: #FFCF00;
+
+
+* {
+    font-size: 16px;
+    font-family: Helvetica, Arial, Sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    // background-image: linear-gradient(left, rgba(212,228,239,0.5) 100%, rgba(134,174,204,0.38) 20%), url(/Portfolio/back.jpg);
+    background: $back-light-color;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.shadow {
+    box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.4);
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    // border: black solid 1px;
+    border-radius: 10px;
+    background: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=cfcfcf&density=16&opacity=28),white;
+
+    header{
+        box-sizing: content-box;
+        text-align: center;
+        vertical-align: middle;
+        padding: 1rem;
+        .profilepic {
+            width: 40%;
+            max-width: 200px;
+            border: black solid 0px;
+            border-radius: 50%;
+            margin: 15px auto 15px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: lighter;
+            padding: 1em;
+        }
+    }
+
+    main {
+        
+        background: #372248;
+        padding-bottom: 50px;
+
+        h2 {
+            color:$alert-color;
+            font-size: 1.5rem;;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0.5em auto;
+        }
+        p {
+            color: white;
+            line-height: 1.7;
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+            color: white;
+            display: flex;
+            padding: 1em;
+            li {
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        .box {
+            padding: 1rem;
+            box-sizing: border-box;
+            // min-height: 250px;
+            
+        }
+
+        .skills {
+            background-color: $color2;
+        }
+
+        .works {
+            background-color: $color3;
+            box-sizing: border-box;
+            padding: 1rem 0 0 0;
+            .slider {
+                display: flex;
+                width: 100%;
+                scroll-snap-type: x mandatory;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                box-sizing: border-box;
+                img {
+                    flex: 0 0 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-fit: fill;
+                    scroll-snap-align: center;
+                }
+            }
+        }
+
+        .contact {
+            background-color: $color1;
+            form {
+                text-align: center;
+                label {
+                    color:white;
+                    width: 80%;
+                    display: inline-block;
+                    
+                }
+                input, textarea {
+                    margin: 0.3rem;
+                    width: 80%;
+                    display: inline-block;
+                    text-align: center;
+                    background-color: #f8f8f8;
+                    border-radius: 6px;
+                    border: solid 1px #e5e5e5;
+                    color: inherit;
+                    outline: 0;
+                    padding: 0.5em 1em;
+                    text-decoration: none;
+                        &:focus {
+                            border-color: $alert-color;
+                            box-shadow: 0 0 0 2px $alert-color;
+                        }
+                    }
+                }
+                button {
+                    width: 30%;
+                    height: 2rem;
+                    border-radius: 5px;
+                    border: solid 1px black;
+                    background-color: white;
+
+                }
+            }
+        }
+    }
+
+.whatsapp {
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    // border: solid white 3px;
+    background: white;
+    position: fixed;
+    display: flex;
+    box-sizing: border-box;
+    bottom: 15px;
+    right: 15px;
+    a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        margin: auto;
+        vertical-align: middle;
+        .whatsapp-logo {
+            width: 40px;
+            fill: white;
+            }
+    }
+}
+
+// DARK MODE
+@media (prefers-color-scheme: dark) {
+    body {
+        background: $back-dark-color;
+    }
+}
+
+// RESPONSIVE
+@media screen and (min-width: 768px) {
+    .container {
+        width: 400px;
+        margin-top: 100px;
+    }        
+}
